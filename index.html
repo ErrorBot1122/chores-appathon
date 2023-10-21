@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="https://cdn.glitch.global/08ac44a4-974a-4e65-9ed1-8b6e152126fc/Approve.ico?v=1697731885802"
+    />
+
+    <title>Chore Tracker</title>
+
+    <link rel="stylesheet" href="/style.css" />
+    <!--<script src="https://cdn.tailwindcss.com"></script>-->
+
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Epic Chores App</h1>
+    </header>
+    <main>
+      <section>
+        <h2>Chores</h2>
+        <ul style="list-style-type: none; padding: 0; margin: 0">
+
+          <!-- EPIC ACCORDIEN -->
+          <li>
+            <input type="checkbox" />
+            <details>
+              <!-- Top Part of accorden -->
+              <summary>Chore1</summary>
+              <!-- Expanable Part of Accorden -->
+              <div>
+                <!-- Add a discriton hedder... Mabye? -->
+                <!--<h4>Discription</h4> -->
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                  pretium mi eu feugiat fermentum. Cras dapibus ante non posuere
+                  posuere. Phasellus varius urna in eros molestie ullamcorper. Nulla
+                  mattis ligula ut efficitur aliquam. Cras porttitor sollicitudin
+                  accumsan. Pellentesque sit amet nibh volutpat, faucibus lacus vel,
+                  ornare odio. Phasellus ut nisl dignissim justo dapibus auctor.
+                  Donec in vulputate urna.
+                </p>
+
+                <!-- Pictures Section -->
+                <ul>
+                  <li>
+                    <input type="file" id="choreImage1-1" name="image1" accept="image/*" style="display: none"/>
+                    <label for="choreImage1-1">
+                      <!-- Placeholder Image -->
+                      <image src="https://cdn.glitch.global/08ac44a4-974a-4e65-9ed1-8b6e152126fc/ChoreImagePlaceholder.png?v=1697915066415" alt="An image of a completed chore"></image>
+                    </label>
+                  </li>
+
+                  <li>
+                    <input type="file" id="choreImage1-2" name="image2" accept="image/*" style="display: none"/>
+                    <label for="choreImage1-2">
+                      <!-- Placeholder Image -->
+                      <image src="https://cdn.glitch.global/08ac44a4-974a-4e65-9ed1-8b6e152126fc/ChoreImagePlaceholder.png?v=1697915066415" alt="An image of a completed chore"></image>
+                    </label>
+                  </li>
+
+                  <li>
+                    <input type="file" id="choreImage1-3" name="image3" accept="image/*" style="display: none"/>
+                    <label for="choreImage1-3">
+                      <!-- Placeholder Image -->
+                      <image src="https://cdn.glitch.global/08ac44a4-974a-4e65-9ed1-8b6e152126fc/ChoreImagePlaceholder.png?v=1697915066415" alt="An image of a completed chore"></image>
+                    </label>
+                  </li>
+                </ul>
+                
+                <!-- Other Input Section -->
+                <label for="choreRange1-1">Number Of Chore Done</label>
+                <input type="range" id="choreRange1-1" name="range1" min="1" max="3" />
+                
+                <!-- Extra Info -->
+                <textarea id="choreExtraInfo1" name="extra_info" placeholder="Enything else you want to add?" style="resize: none; width: 100vw"></textarea>
+              </div>              
+            </details>
+          </li>
+
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
