@@ -16,25 +16,49 @@
     <script src="/script.js" defer></script>
   </head>
   <body>
-    <header class="h-16 mb-4 bg-green-500 border-2 border-green-600 flex justify-center items-center">
-      <h1 class="text-white text-5xl font-bold">Epic Chores App</h1>
+    <header class="h-20 mb-4 py-1 bg-green-500 border-2 border-green-600 static flex justify-center items-center">
+      <h1 class="grow text-center text-white text-4xl md:text-5xl font-bold">Epic Chore Tracker</h1>
+      
+      <div class="h-full mx-2 md:mx-8 flex relative">
+        <image class="rounded-full h-full py-1" src="https://cdn.glitch.global/08ac44a4-974a-4e65-9ed1-8b6e152126fc/Profile.jpg?v=1698534373762" />
+        <button class="mx-3 font-bold text-black" id="profile-menu-btn">[&gt]</button>
+        
+        <ul class="hidden w-48 right-0 md:-right-4 top-[4.25rem] absolute bg-white border-2 border-gray-300 rounded-xl overflow-hidden" id="profile-menu">
+          <li>
+            <button class="w-full h-full px-3 pt-4 pb-2 font-semibold text-left hover:bg-gray-300 active:bg-zinc-200">Veiw Profile</button>
+          </li>
+          <li>
+            <button class="w-full h-full px-3 py-2 font-semibold text-left hover:bg-gray-300 active:bg-zinc-200">Edit Settings</button>
+          </li>
+          <li>
+            <button class="w-full h-full px-3 py-2 font-semibold text-left hover:bg-gray-300 active:bg-zinc-200">Contact Support</button>
+          </li>
+          <li>
+            <button class="w-full h-full px-3 pt-2 pb-4 font-semibold text-left hover:bg-gray-300 active:bg-zinc-200">Chore History</button>
+          </li>
+        </ul>
+      </div>
     </header>
     
     <main class="w-full">
       <section class="w-full mb-4 flex flex-col justify-center items-center">
         <h2 class="mb-3 text-3xl font-bold">Chores for the Day</h2>
         
-        <ul class="w-4/5 md:w-[48em]">
+        <ul class="w-4/5 md:w-[48rem]">
           <!-- EPIC ACCORDIEN -->
           <li class="border-x-2 border-t-2 flex flex-row flex">
             <details class="w-full">
               <!-- Top Part of accordn -->
-              <summary class="py-1 pl-2 border-b-2"><input type="checkbox" id="choreDone1" name="is_done" /> Chore1</summary>
+              <summary class="py-2 pl-2 border-b-2 text-xl font-medium">
+                <input type="checkbox" id="choreDone1" name="is_done" />
+                Chore1
+              </summary>
+              
               <!-- Expanable Part of Accorden -->
-              <div class="pl-8 py-2 last:border-b-2">
+              <div class="py-2 last:border-b-2">
                 <!-- Add a discriton hedder... Mabye? -->
                 <!--<h4>Discription</h4> -->
-                <p class="my-3 pr-3">
+                <p class="ml-8 my-3 pr-3">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                   pretium mi eu feugiat fermentum. Cras dapibus ante non posuere
                   posuere. Phasellus varius urna in eros molestie ullamcorper. Nulla
@@ -45,149 +69,45 @@
                 </p>
 
                 <!-- Pictures Section -->
-                <ul class="my-6 flex flex-row">
-                  <li class="px-3 first:pl-0 last:py-0">
+                <ul class="ml-5 my-6 flex flex-row">
+                  <li class="w-20 grow-0 px-3">
                     <input class="hidden" type="file" id="choreImage1-1" name="image1" accept="image/*"/>
                     <label for="choreImage1-1">
                       <!-- Placeholder Image -->
-                      <image src="https://cdn.glitch.global/08ac44a4-974a-4e65-9ed1-8b6e152126fc/ChoreImagePlaceholder.png?v=1697915066415" alt="An image of a completed chore"></image>
+                      <div class="bg-gray-200 rounded-xl aspect-[9/16] flex items-center justify-center hover:cursor-pointer">
+                        <image src="https://cdn.glitch.global/08ac44a4-974a-4e65-9ed1-8b6e152126fc/ChoreImagePlaceholder.png?v=1697915066415" alt="An image of a completed chore" class="m-auto w-auto h-auto"></image>
+                      </div>
                     </label>
                   </li>
 
-                  <li class="px-3 first:pl-0 last:py-0">
-                    <input class="hidden" type="file" id="choreImage1-2" name="image2" accept="image/*"/>
-                    <label for="choreImage1-2">
-                      <!-- Placeholder Image -->
-                      <image src="https://cdn.glitch.global/08ac44a4-974a-4e65-9ed1-8b6e152126fc/ChoreImagePlaceholder.png?v=1697915066415" alt="An image of a completed chore"></image>
-                    </label>
-                  </li>
-
-                  <li class="px-3 first:pl-0 last:py-0">
-                    <input class="hidden" type="file" id="choreImage1-3" name="image3" accept="image/*"/>
-                    <label for="choreImage1-3">
-                      <!-- Placeholder Image -->
-                      <image src="https://cdn.glitch.global/08ac44a4-974a-4e65-9ed1-8b6e152126fc/ChoreImagePlaceholder.png?v=1697915066415" alt="An image of a completed chore"></image>
-                    </label>
-                  </li>
-                </ul>
-                
-                <!-- Other Input Section -->
-                <label for="choreRange1-1">Number Of Chore Done</label>
-                <input type="range" id="choreRange1-1" name="range1" min="1" max="3" />
-                
-                <!-- Extra Info -->
-                <textarea class="w-11/12 h-24 border-2 my-3 resize-none" id="choreExtraInfo1" name="extra_info" placeholder="Enything else you want to add?" ></textarea>
-              </div>              
-            </details>
-          </li>
-
-          <li class="border-x-2 first:border-t-2 flex flex-row flex">
-            <details class="w-full">
-              <!-- Top Part of accordn -->
-              <summary class="py-1 pl-2 border-b-2"><input type="checkbox" id="choreDone2" name="is_done" /> Chore2</summary>
-              <!-- Expanable Part of Accorden -->
-              <div class="pl-8 py-2 last:border-b-2">
-                <!-- Add a discriton hedder... Mabye? -->
-                <!--<h4>Discription</h4> -->
-                <p class="my-3 pr-3">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                  pretium mi eu feugiat fermentum. Cras dapibus ante non posuere
-                  posuere. Phasellus varius urna in eros molestie ullamcorper. Nulla
-                  mattis ligula ut efficitur aliquam. Cras porttitor sollicitudin
-                  accumsan. Pellentesque sit amet nibh volutpat, faucibus lacus vel,
-                  ornare odio. Phasellus ut nisl dignissim justo dapibus auctor.
-                  Donec in vulputate urna.
-                </p>
-
-                <!-- Pictures Section -->
-                <ul class="my-6 flex flex-row">
-                  <li class="px-3 first:pl-0 last:py-0">
-                    <input class="hidden" type="file" id="choreImage2-1" name="image1" accept="image/*"/>
+                  <li class="w-20 grow-0 px-3">
+                    <input class="hidden" type="file" id="choreImage1-2" name="image1" accept="image/*"/>
                     <label for="choreImage1-1">
                       <!-- Placeholder Image -->
-                      <image src="https://cdn.glitch.global/08ac44a4-974a-4e65-9ed1-8b6e152126fc/ChoreImagePlaceholder.png?v=1697915066415" alt="An image of a completed chore"></image>
+                      <div class="bg-gray-200 rounded-xl aspect-[9/16] flex items-center justify-center hover:cursor-pointer">
+                        <image src="https://cdn.glitch.global/08ac44a4-974a-4e65-9ed1-8b6e152126fc/ChoreImagePlaceholder.png?v=1697915066415" alt="An image of a completed chore" class="m-auto w-auto h-auto"></image>
+                      </div>
                     </label>
                   </li>
 
-                  <li class="px-3 first:pl-0 last:py-0">
-                    <input class="hidden" type="file" id="choreImage2-2" name="image2" accept="image/*"/>
-                    <label for="choreImage1-2">
-                      <!-- Placeholder Image -->
-                      <image src="https://cdn.glitch.global/08ac44a4-974a-4e65-9ed1-8b6e152126fc/ChoreImagePlaceholder.png?v=1697915066415" alt="An image of a completed chore"></image>
-                    </label>
-                  </li>
-
-                  <li class="px-3 first:pl-0 last:py-0">
-                    <input class="hidden" type="file" id="choreImage2-3" name="image3" accept="image/*"/>
-                    <label for="choreImage1-3">
-                      <!-- Placeholder Image -->
-                      <image src="https://cdn.glitch.global/08ac44a4-974a-4e65-9ed1-8b6e152126fc/ChoreImagePlaceholder.png?v=1697915066415" alt="An image of a completed chore"></image>
-                    </label>
-                  </li>
-                </ul>
-                
-                <!-- Other Input Section -->
-                <label for="choreRange1-1">Number Of Chore Done</label>
-                <input type="range" id="choreRange2-1" name="range1" min="1" max="3" />
-                
-                <!-- Extra Info -->
-                <textarea class="w-11/12 h-24 border-2 my-3 resize-none" id="choreExtraInfo2" name="extra_info" placeholder="Enything else you want to add?" ></textarea>
-              </div>              
-            </details>
-          </li>
-          
-          <li class="border-x-2 first:border-t-2 flex flex-row flex">
-            <details class="w-full">
-              <!-- Top Part of accordn -->
-              <summary class="py-1 pl-2 border-b-2"><input type="checkbox" id="choreDone3" name="is_done" /> Chore3</summary>
-              <!-- Expanable Part of Accorden -->
-              <div class="pl-8 py-2 last:border-b-2">
-                <!-- Add a discriton hedder... Mabye? -->
-                <!--<h4>Discription</h4> -->
-                <p class="my-3 pr-3">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                  pretium mi eu feugiat fermentum. Cras dapibus ante non posuere
-                  posuere. Phasellus varius urna in eros molestie ullamcorper. Nulla
-                  mattis ligula ut efficitur aliquam. Cras porttitor sollicitudin
-                  accumsan. Pellentesque sit amet nibh volutpat, faucibus lacus vel,
-                  ornare odio. Phasellus ut nisl dignissim justo dapibus auctor.
-                  Donec in vulputate urna.
-                </p>
-
-                <!-- Pictures Section -->
-                <ul class="my-6 flex flex-row">
-                  <li class="px-3 first:pl-0 last:py-0">
-                    <input class="hidden" type="file" id="choreImage3-1" name="image1" accept="image/*"/>
+                  <li class="w-20 grow-0 px-3">
+                    <input class="hidden" type="file" id="choreImage1-3" name="image1" accept="image/*"/>
                     <label for="choreImage1-1">
                       <!-- Placeholder Image -->
-                      <image src="https://cdn.glitch.global/08ac44a4-974a-4e65-9ed1-8b6e152126fc/ChoreImagePlaceholder.png?v=1697915066415" alt="An image of a completed chore"></image>
-                    </label>
-                  </li>
-
-                  <li class="px-3 first:pl-0 last:py-0">
-                    <input class="hidden" type="file" id="choreImage3-2" name="image2" accept="image/*"/>
-                    <label for="choreImage1-2">
-                      <!-- Placeholder Image -->
-                      <image src="https://cdn.glitch.global/08ac44a4-974a-4e65-9ed1-8b6e152126fc/ChoreImagePlaceholder.png?v=1697915066415" alt="An image of a completed chore"></image>
-                    </label>
-                  </li>
-
-                  <li class="px-3 first:pl-0 last:py-0">
-                    <input class="hidden" type="file" id="choreImage3-3" name="image3" accept="image/*"/>
-                    <label for="choreImage1-3">
-                      <!-- Placeholder Image -->
-                      <image src="https://cdn.glitch.global/08ac44a4-974a-4e65-9ed1-8b6e152126fc/ChoreImagePlaceholder.png?v=1697915066415" alt="An image of a completed chore"></image>
+                      <div class="bg-gray-200 rounded-xl aspect-[9/16] flex items-center justify-center hover:cursor-pointer">
+                        <image src="https://cdn.glitch.global/08ac44a4-974a-4e65-9ed1-8b6e152126fc/ChoreImagePlaceholder.png?v=1697915066415" alt="An image of a completed chore" class="m-auto w-auto h-auto"></image>
+                      </div>
                     </label>
                   </li>
                 </ul>
                 
                 <!-- Other Input Section -->
-                <label for="choreRange1-1">Number Of Chore Done</label>
-                <input type="range" id="choreRange3-1" name="range1" min="1" max="3" />
+                <label for="choreRange1-1" class="ml-8">Number Of Chore Done</label>
+                <input type="range" id="choreRange1-1" name="range1" min="1" max="3" class="ml-1" />
                 
                 <!-- Extra Info -->
-                <textarea class="w-11/12 h-24 border-2 my-3 resize-none" id="choreExtraInfo3" name="extra_info" placeholder="Enything else you want to add?" ></textarea>
-              </div>              
+                <textarea class="w-5/6 h-32 border-2 ml-8 my-3 resize-none" id="choreExtraInfo1" name="extra_info" placeholder="Enything else you want to add?" ></textarea>
+              </div>
             </details>
           </li>
         </ul>
